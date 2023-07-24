@@ -2,20 +2,8 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +12,53 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.categoriesList{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  list-style: none;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cardCategories{
+  background-color: #c4d0fc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 10px;
+  margin: 10px;
+  transition: transform 0.3s;
+  display: flex; /* usa flexbox para alinear los elementos */
+  flex-direction: column; /* usa una columna en lugar de una fila */
 }
+
+.addCategory{
+  background: darkblue;
+  color: #ffffff ;
+  padding: 10px 19px;
+  font-size: 16px;
+  border-radius: 5px 5px 5px 5px;
+}
+.category{
+  padding: 10px 30px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+.addProduct{
+  background: darkblue;
+  color: #ffffff ;
+  padding: 9px 14px;
+  font-size: 16px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.product{
+  padding: 9px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+
+
