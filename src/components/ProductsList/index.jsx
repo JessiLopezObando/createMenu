@@ -1,4 +1,5 @@
 import React from "react";
+import ProductCard from "components/ProductCard";
 
 const ProductsList = ({productsByCategory}) =>{
 
@@ -7,9 +8,7 @@ const ProductsList = ({productsByCategory}) =>{
 
                 {
                     productsByCategory.map((product, index) =>(
-                            <li key={index} className="cardProduct">
-                                {product.label} ${product.price}
-                            </li>
+                            <ProductCard key={index} product={product} />
                     ))
                 }
         </ul>

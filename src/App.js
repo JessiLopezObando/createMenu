@@ -1,7 +1,8 @@
 import './App.css';
-import CategoryForm from "./components/CategoryForm";
 import React, {useState} from "react";
-import CategoriesList from "./components/CategoriesList";
+import CategoryForm from "components/CategoryForm";
+import CategoriesList from "components/CategoriesList";
+
 
 function App() {
 

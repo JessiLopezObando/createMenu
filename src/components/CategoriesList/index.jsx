@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import ProductForm from "../ProductForm";
-import ProductsList from "../ProductsList";
+import ProductForm from "components/ProductForm";
+import ProductsList from "components/ProductsList";
+
 
 const CategoriesList = ({categories}) =>{
 
