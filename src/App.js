@@ -1,7 +1,7 @@
 import './App.css';
-import InputCategory from "./components/InputCategory";
+import CategoryForm from "./components/CategoryForm";
 import React, {useState} from "react";
-import ShowCategories from "./components/ShowCategories";
+import CategoriesList from "./components/CategoriesList";
 
 function App() {
 
@@ -11,11 +11,11 @@ function App() {
   return (
     <div className="App">
         <h1>Menú</h1>
-        <InputCategory
+        <CategoryForm
             categories ={categories}
             setCategories={setCategories}
         />
-        <ShowCategories
+        <CategoriesList
             categories ={categories}
             setCategories={setCategories}
         />

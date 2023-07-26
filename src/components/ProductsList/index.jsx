@@ -1,6 +1,6 @@
 import React from "react";
 
-const ShowProducts = ({productsByCategory}) =>{
+const ProductsList = ({productsByCategory}) =>{
 
     return(
         <ul className="productsList">
@@ -16,4 +16,4 @@ const ShowProducts = ({productsByCategory}) =>{
     )
 }
 
-export default ShowProducts
+export default ProductsList

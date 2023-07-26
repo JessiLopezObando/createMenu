@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import InputProducts from "../InputProducts";
-import ShowProducts from "../ShowProducts";
+import ProductForm from "../ProductForm";
+import ProductsList from "../ProductsList";
 
-const ShowCategories = ({categories}) =>{
+const CategoriesList = ({categories}) =>{
 
     const [productsByCategory, setProductsByCategory] = useState({})
 
@@ -12,12 +12,12 @@ const ShowCategories = ({categories}) =>{
                 categories.map((category) =>(
                         <li key={category.id} className="cardCategories">
                             <h3>{category.label}</h3>
-                            <InputProducts
+                            <ProductForm
                                 productsByCategory={productsByCategory}
                                 setProductsByCategory={setProductsByCategory}
                                 categoryId={category.id}
                             />
-                            <ShowProducts productsByCategory={productsByCategory[category.id] || []} />
+                            <ProductsList productsByCategory={productsByCategory[category.id] || []} />
                         </li>
                     )
                 )
@@ -27,4 +27,4 @@ const ShowCategories = ({categories}) =>{
 
 }
 
-export default ShowCategories
+export default CategoriesList

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const InputProducts = ({productsByCategory, setProductsByCategory, categoryId}) =>{
+const ProductForm = ({productsByCategory, setProductsByCategory, categoryId}) =>{
 
     const [inputProduct, setInputProduct] = useState('')
     const [inputPriceProduct, setInputPriceProduct] = useState('')
@@ -49,4 +49,4 @@ const InputProducts = ({productsByCategory, setProductsByCategory, categoryId}) 
     )
 }
 
-export default InputProducts
+export default ProductForm

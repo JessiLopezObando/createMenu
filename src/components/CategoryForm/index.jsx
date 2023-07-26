@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const InputCategory = ({categories, setCategories}) =>{
+const CategoryForm = ({categories, setCategories}) =>{
 
     const [inputCategory, setInputCategory]= useState('')
     const [countCategory, setCountCategory] = useState(1)
@@ -37,4 +37,4 @@ const InputCategory = ({categories, setCategories}) =>{
     )
 }
 
-export default InputCategory
+export default CategoryForm
