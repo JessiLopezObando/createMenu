@@ -1,14 +1,18 @@
 import React from "react";
 
-const ShowProducts = ({products}) =>{
+const ShowProducts = ({productsByCategory}) =>{
 
     return(
         <ul className="productsList">
-            {
-                <h2>It works</h2>
-            }
-        </ul>
 
+                {
+                    productsByCategory.map((product, index) =>(
+                            <li key={index} className="cardProduct">
+                                {product.label} ${product.price}
+                            </li>
+                    ))
+                }
+        </ul>
     )
 }
 

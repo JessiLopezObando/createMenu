@@ -3,6 +3,7 @@ import React, {useState} from "react";
 const InputCategory = ({categories, setCategories}) =>{
 
     const [inputCategory, setInputCategory]= useState('')
+    const [countCategory, setCountCategory] = useState(1)
 
 
     const handleChange = (e) => {
@@ -11,11 +12,13 @@ const InputCategory = ({categories, setCategories}) =>{
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        if(inputCategory !== ''){
+        if(inputCategory.trim() !== ''){
             const newCategory = {
+                id: countCategory,
                 label:inputCategory
             }
 
+            setCountCategory(countCategory + 1)
             setCategories([...categories, newCategory])
             setInputCategory('')
         }

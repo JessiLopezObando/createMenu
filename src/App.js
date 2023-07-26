@@ -2,9 +2,9 @@ import './App.css';
 import InputCategory from "./components/InputCategory";
 import React, {useState} from "react";
 import ShowCategories from "./components/ShowCategories";
-import ShowProducts from "./components/ShowProducts";
 
 function App() {
+
 
     const [categories, setCategories] = useState([])
 

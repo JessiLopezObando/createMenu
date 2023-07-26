@@ -1,18 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import InputProducts from "../InputProducts";
 import ShowProducts from "../ShowProducts";
 
-const ShowCategories = ({categories, products, setProducts}) =>{
+const ShowCategories = ({categories}) =>{
+
+    const [productsByCategory, setProductsByCategory] = useState({})
 
     return(
         <ul className="categoriesList">
             {
-                categories.map((category, index) =>(
-                        <li key={index} className="cardCategories">
+                categories.map((category) =>(
+                        <li key={category.id} className="cardCategories">
                             <h3>{category.label}</h3>
                             <InputProducts
-                            products={products}
-                            setProducts={setProducts}/>
+                                productsByCategory={productsByCategory}
+                                setProductsByCategory={setProductsByCategory}
+                                categoryId={category.id}
+                            />
+                            <ShowProducts productsByCategory={productsByCategory[category.id] || []} />
                         </li>
                     )
                 )

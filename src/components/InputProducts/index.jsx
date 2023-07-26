@@ -1,38 +1,51 @@
 import React, {useState} from "react";
-import ShowProducts from "../ShowProducts";
 
-const InputProducts = () =>{
+const InputProducts = ({productsByCategory, setProductsByCategory, categoryId}) =>{
 
     const [inputProduct, setInputProduct] = useState('')
-    const [products, setProducts] = useState([])
+    const [inputPriceProduct, setInputPriceProduct] = useState('')
 
-    const HandleChange = (e) =>{
+    const HandleChangeProduct = (e) =>{
         setInputProduct(e.target.value)
+    }
+
+    const HandleChangePrice = (e) =>{
+        setInputPriceProduct(e.target.value)
     }
 
     const HandleSubmit = (e) =>{
         e.preventDefault()
 
-        if(inputProduct !== ''){
+        if(inputProduct.trim() !== ''){
             const newProduct = {
-                label: inputProduct
+                label: inputProduct,
+                price: inputPriceProduct,
+                categoryId: categoryId
             }
 
-            setProducts([...products, newProduct])
+            setProductsByCategory((prevProductsByCategory) =>{
+                const prevProducts = prevProductsByCategory[categoryId] || []
+                return {...prevProductsByCategory, [categoryId]: [...prevProducts, newProduct]}
+            })
+
             setInputProduct('')
+            setInputPriceProduct('')
         }
 
     }
 
-    console.log(products);
-
-
     return(
-
+    <>
         <form onSubmit={HandleSubmit}>
-            <input className="product" type="text" onChange={HandleChange} value={inputProduct} />
-            <input className="addProduct" type="submit" value="Añadir" />
+            <input className="product" type="text" onChange={HandleChangeProduct} value={inputProduct} placeholder="Ingrese el producto" required/>
+            <input className= "priceProduct" type="number" onChange={HandleChangePrice} value={inputPriceProduct} placeholder="Ingrese el precio" required/>
+            <div>
+                <input className="addProduct" type="submit" value="Añadir" />
+            </div>
+
         </form>
+    </>
+
     )
 }
 
