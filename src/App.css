@@ -38,6 +38,7 @@
   font-size: 16px;
   border-radius: 5px 5px 5px 5px;
 }
+
 .category{
   padding: 10px 30px;
   font-size: 16px;
@@ -74,15 +75,6 @@
   list-style: none;
 }
 
-table {
-  border-collapse: collapse;
-}
-
-td,
-th {
-  padding: 10px 20px;
-}
-
 .product-card{
   background: #cdd5f9;
   border-radius: 10px;
@@ -92,12 +84,17 @@ th {
 }
 
 .button-edit{
+  margin-left: 70px;
   background: #44a96c;
   color: #ffffff ;
   padding: 4px 5px;
   font-size: 14px;
   border-radius: 5px 5px 5px 5px;
+  margin-bottom: 10px;
 }
+
+
+
 
 
 
