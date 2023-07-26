@@ -91,6 +91,14 @@ th {
   margin: 10px;
 }
 
+.button-edit{
+  background: #44a96c;
+  color: #ffffff ;
+  padding: 4px 5px;
+  font-size: 14px;
+  border-radius: 5px 5px 5px 5px;
+}
+
 
 
 
