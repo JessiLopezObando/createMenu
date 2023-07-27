@@ -4,6 +4,7 @@ const ProductForm = ({setProductsByCategory, categoryId, product}) =>{
 
     const [inputProduct, setInputProduct] = useState(product?.label || '')
     const [inputPriceProduct, setInputPriceProduct] = useState(product?.price || '')
+    const [productId, setProductId] = useState(product?.id || 1)
 
     const HandleChangeProduct = (e) =>{
         setInputProduct(e.target.value)
@@ -18,6 +19,7 @@ const ProductForm = ({setProductsByCategory, categoryId, product}) =>{
 
             if(inputProduct.trim() !== ''){
                 const newProduct = {
+                    id: productId,
                     label: inputProduct,
                     price: inputPriceProduct,
                     categoryId: categoryId
@@ -28,6 +30,7 @@ const ProductForm = ({setProductsByCategory, categoryId, product}) =>{
                     return {...prevProductsByCategory, [categoryId]: [...prevProducts, newProduct]}
                 })
 
+                setProductId(productId +1)
                 setInputProduct('')
                 setInputPriceProduct('')
 

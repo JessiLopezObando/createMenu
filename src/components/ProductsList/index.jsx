@@ -3,12 +3,14 @@ import ProductCard from "components/ProductCard";
 
 const ProductsList = ({productsByCategory}) =>{
 
+    console.log(productsByCategory);
+
     return(
         <ul className="productsList">
 
                 {
-                    productsByCategory.map((product, index) =>(
-                            <ProductCard key={index} product={product} />
+                    productsByCategory.map((product) =>(
+                            <ProductCard key={product.id} product={product} />
                     ))
                 }
         </ul>

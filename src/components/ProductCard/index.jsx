@@ -9,6 +9,7 @@ const ProductCard = ({product}) => {
         setEditState(!editState)
     }
 
+
     console.log(editState);
 
     return (
