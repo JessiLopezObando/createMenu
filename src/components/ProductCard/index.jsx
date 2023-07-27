@@ -4,11 +4,9 @@ import ProductForm from "components/ProductForm";
 const ProductCard = ({product}) => {
 
     const [editState, setEditState] = useState(false)
-    const [buttonText, setButtonText] = useState("Editar")
 
     const clickButtonEdit = () =>{
         setEditState(!editState)
-        setButtonText(editState? "Editar" : "Actualizar")
     }
 
     console.log(editState);
@@ -16,7 +14,7 @@ const ProductCard = ({product}) => {
     return (
         <li className="product-card">
             {product.label} ${product.price}
-            <button className="button-edit" onClick={clickButtonEdit}>{buttonText}</button>
+            <button className="button-edit" onClick={clickButtonEdit}>Editar</button>
             <button className="button-delete">Eliminar</button>
             <div className="form-product-edit" >
                 {editState && (

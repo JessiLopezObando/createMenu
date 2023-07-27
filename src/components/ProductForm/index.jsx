@@ -45,6 +45,11 @@ const ProductForm = ({setProductsByCategory, categoryId, product}) =>{
                     <input className="addProduct" type="submit" value="Añadir" />
                 </div>
             )}
+            {product &&(
+                <div>
+                    <input className="addProduct" type="submit" value="Actualizar" />
+                </div>
+            )}
 
         </form>
     </>
