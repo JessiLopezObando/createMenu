@@ -7,7 +7,7 @@ import CategoriesList from "components/CategoriesList";
 function App() {
 
 
-    const [categories, setCategories] = useState([])
+    const [categories, setCategories] = useState([{id:1,label:'Entradas'}])
 
   return (
     <div className="App">

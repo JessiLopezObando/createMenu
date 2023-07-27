@@ -24,8 +24,6 @@ const CategoryForm = ({categories, setCategories}) =>{
         }
     }
 
-    console.log(categories);
-
     return(
       <div>
           <form onSubmit={handleSubmit}>

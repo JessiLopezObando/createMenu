@@ -5,7 +5,9 @@ import ProductsList from "components/ProductsList";
 
 const CategoriesList = ({categories}) =>{
 
-    const [productsByCategory, setProductsByCategory] = useState({})
+    const [productsByCategory, setProductsByCategory] = useState({
+        1: [{label: 'Soda', price:123, id: 1}]
+    })
 
     return(
         <ul className="categoriesList">
@@ -18,7 +20,7 @@ const CategoriesList = ({categories}) =>{
                                 setProductsByCategory={setProductsByCategory}
                                 categoryId={category.id}
                             />
-                            <ProductsList productsByCategory={productsByCategory[category.id] || []} />
+                            <ProductsList productsByCategory={productsByCategory[category.id] || []} setProductsByCategory ={setProductsByCategory} categoryId={category.id} />
                         </li>
                     )
                 )

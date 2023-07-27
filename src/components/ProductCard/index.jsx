@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import ProductForm from "components/ProductForm";
 
-const ProductCard = ({product}) => {
+const ProductCard = ({product, setProductsByCategory, categoryId}) => {
 
     const [editState, setEditState] = useState(false)
 
@@ -9,14 +9,18 @@ const ProductCard = ({product}) => {
         setEditState(!editState)
     }
 
-
-    console.log(editState);
+    console.log(categoryId);
+    const handleProductDelete = (productId) => {
+        setProductsByCategory((previousProducts) =>
+            previousProducts[categoryId].filter((product) => productId !== product.id)
+        )
+    }
 
     return (
         <li className="product-card">
             {product.label} ${product.price}
             <button className="button-edit" onClick={clickButtonEdit}>Editar</button>
-            <button className="button-delete">Eliminar</button>
+            <button className="button-delete" onClick={() => handleProductDelete(product.id)}>Eliminar</button>
             <div className="form-product-edit" >
                 {editState && (
                     <ProductForm product={product}/>
