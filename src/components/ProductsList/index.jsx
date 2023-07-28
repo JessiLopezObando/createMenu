@@ -1,20 +1,36 @@
-import React from "react";
-import ProductCard from "components/ProductCard";
+import React, {useState} from "react"
+import ProductCard from "components/ProductCard"
+import ProductForm from "components/ProductForm"
 
-const ProductsList = ({productsByCategory, setProductsByCategory, categoryId}) =>{
+const ProductsList = ({ categoryId }) => {
+    const [productsByCategory, setProductsByCategory] = useState([])
 
-    console.log(productsByCategory);
-    console.log(categoryId);
+    const productsInCategory = productsByCategory[categoryId] || []
 
-    return(
-        <ul className="productsList">
+    console.log(productsInCategory)
 
-                {
-                    productsByCategory.map((product) =>(
-                            <ProductCard key={product.id} product={product} setProductsByCategory={setProductsByCategory} categoryId={categoryId} />
-                    ))
-                }
-        </ul>
+    return (
+       <div>
+           <ProductForm
+               productsByCategory={productsByCategory}
+               setProductsByCategory={setProductsByCategory}
+               categoryId={categoryId}
+           />
+           {productsInCategory.length > 0 ? (
+               productsInCategory.map((product) => (
+                   <ProductCard
+                       key={product.id}
+                       product={product}
+                       setProductsByCategory={setProductsByCategory}
+                       categoryId={categoryId}
+                   />
+               ))
+           ) : (
+               <p>No hay productos para esta categoría</p>
+           )}
+       </div>
+
+
     )
 }
 

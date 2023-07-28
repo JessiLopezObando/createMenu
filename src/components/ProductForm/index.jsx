@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const ProductForm = ({setProductsByCategory, categoryId, product}) =>{
+const ProductForm = ({productsByCategory, setProductsByCategory, categoryId, product}) =>{
 
     const [inputProduct, setInputProduct] = useState(product?.label || '')
     const [inputPriceProduct, setInputPriceProduct] = useState(product?.price || '')
@@ -22,7 +22,6 @@ const ProductForm = ({setProductsByCategory, categoryId, product}) =>{
                     id: productId,
                     label: inputProduct,
                     price: inputPriceProduct,
-                    categoryId: categoryId
                 }
 
                 setProductsByCategory((prevProductsByCategory) =>{
@@ -37,6 +36,8 @@ const ProductForm = ({setProductsByCategory, categoryId, product}) =>{
             }
 
     }
+
+    console.log(productsByCategory);
 
     return(
     <>
